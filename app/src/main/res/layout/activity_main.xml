@@ -35,13 +35,10 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical">
 
-                <androidx.gridlayout.widget.GridLayout
+                <TableLayout
+                    android:id="@+id/table_chess"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:columnCount="8"
-                    app:rowCount="8">
-
-                </androidx.gridlayout.widget.GridLayout>
+                    android:layout_height="match_parent"/>
             </LinearLayout>
 
         </LinearLayout>

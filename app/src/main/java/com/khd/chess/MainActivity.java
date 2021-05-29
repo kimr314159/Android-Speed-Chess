@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    TableLayout gridViewChess;
+    TableLayout tableLayoutChess;
 
     /**
      * Change view to include chess grid.
@@ -24,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridViewChess = (TableLayout)findViewById(R.id.table_chess);
+        tableLayoutChess = (TableLayout)findViewById(R.id.table_chess);
         for(int i=0; i<8; i++){
             TableRow row = new TableRow(this);
-            gridViewChess.addView(row);
+            tableLayoutChess.addView(row);
             row.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.MATCH_PARENT, 1.0f));
             for(int j=0; j<8; j++) {
                 TableRow col = new TableRow(this);

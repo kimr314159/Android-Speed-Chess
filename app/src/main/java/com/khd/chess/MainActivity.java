@@ -14,15 +14,20 @@ public class MainActivity extends AppCompatActivity {
 
     TableLayout tableLayoutChess;
 
-    /**
-     * Change view to include chess grid.
-     * @param
-     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initTable();
+    }
 
+
+    /**
+     * Change view to include chess grid.
+     * @param
+     */
+    public boolean initTable(){
         tableLayoutChess = (TableLayout)findViewById(R.id.table_chess);
         for(int i=0; i<8; i++){
             TableRow row = new TableRow(this);
@@ -39,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Testing.");
             }
         }
+
+        return true;
     }
+
+
+
 }

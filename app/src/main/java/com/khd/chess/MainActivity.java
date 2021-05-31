@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import com.khd.chess.Piece;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
     TableLayout tableLayoutChess;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public boolean initTable(){
         tableLayoutChess = (TableLayout)findViewById(R.id.table_chess);
+        tableLayoutChess.setPadding(80,200,80,200);
         int count = 0;
         for(int i=0; i<8; i++){
             TableRow row = new TableRow(this);
@@ -48,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Testing.");
             }
         }
-
         return true;
     }
-
-
-
 }
+

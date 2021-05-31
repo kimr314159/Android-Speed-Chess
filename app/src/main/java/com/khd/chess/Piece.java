@@ -1,11 +1,6 @@
 package com.khd.chess;
 
-public class Piece {
-
-
-
-
-
-
-
+interface Piece {
+    void move();
+    void reset();
 }

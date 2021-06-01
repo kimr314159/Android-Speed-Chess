@@ -21,6 +21,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initTable();
     }
+    
+    /**
+    * Change view to include timer
+    *
+    */
+    public boolean initTimer(){
+        CountDownTimer countDownTimer = new CountDownTimer(5000,100);
+        return true;
+    }
 
 
     /**

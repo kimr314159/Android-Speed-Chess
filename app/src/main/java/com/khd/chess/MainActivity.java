@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initTable();
+        initTimer();
     }
     
     /**
@@ -27,7 +29,18 @@ public class MainActivity extends AppCompatActivity {
     *
     */
     public boolean initTimer(){
-        CountDownTimer countDownTimer = new CountDownTimer(5000,100);
+        CountDownTimer countDownTimer = new CountDownTimer(5000, 100) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                String secondsLeft = String.valueOf((int)millisUntilFinished/1000);
+                System.out.println(secondsLeft);
+            }
+
+            @Override
+            public void onFinish() {
+                System.out.println("Time Completed.");
+            }
+        }.start();
         return true;
     }
 

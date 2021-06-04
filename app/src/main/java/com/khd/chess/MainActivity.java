@@ -15,11 +15,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     TableLayout tableLayoutChess;
+    TextView textViewTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initTable();
         initTimer();
     }
@@ -29,16 +31,19 @@ public class MainActivity extends AppCompatActivity {
     *
     */
     public boolean initTimer(){
+        textViewTimer = (TextView) findViewById(R.id.text_view_timer);
         CountDownTimer countDownTimer = new CountDownTimer(5000, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
                 String secondsLeft = String.valueOf((int)millisUntilFinished/1000);
+                textViewTimer.setText(secondsLeft);
                 System.out.println(secondsLeft);
             }
 
             @Override
             public void onFinish() {
                 System.out.println("Time Completed.");
+                textViewTimer.setText("Time Completed.");
             }
         }.start();
         return true;

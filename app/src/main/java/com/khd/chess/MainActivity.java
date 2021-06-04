@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         try {
             tableLayoutChess = (TableLayout) findViewById(R.id.table_chess);
             tableLayoutChess.setPadding(80, 200, 80, 200);
+
+            King king = new King();
+            Knight knight = new Knight();
+
             int count = 0;
             for (int i = 0; i < 8; i++) {
                 TableRow row = new TableRow(this);

@@ -1,10 +1,12 @@
 package com.khd.chess;
 
+import android.graphics.Point;
+
+import java.nio.file.Path;
+
 public class King implements Piece {
 
-
-
-
+    private Point[] startingPositions = {new Point(4,0),new Point(4,7) };
 
     @Override
     public void move() {
@@ -29,6 +31,10 @@ public class King implements Piece {
     @Override
     public void getAllowedMoves() {
 
+    }
+
+    public Point[] getStartingPositions(){
+        return startingPositions;
     }
 
 }

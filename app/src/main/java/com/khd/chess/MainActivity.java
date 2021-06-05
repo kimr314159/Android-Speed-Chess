@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             King king = new King();
             Knight knight = new Knight();
 
+            //Init entire table
             int count = 0;
             for (int i = 0; i < 8; i++) {
                 count++;
@@ -81,12 +82,20 @@ public class MainActivity extends AppCompatActivity {
                     }
                     TextView str2 = new TextView(this);
                     str2.setTextColor(Color.WHITE);
-                    str2.setText(i + ", " + j);
+                    str2.setText(j + ", " + i);
                     col.addView(str2);
                     row.addView(col);
                     col.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1.0f));
                     count++;
                     System.out.println("Testing.");
+                }
+            }
+
+
+            //Init black pieces
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 8; j++) {
+                    System.out.println(j + ", " + i);
                 }
             }
         }catch(Exception e){

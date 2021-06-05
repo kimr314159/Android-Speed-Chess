@@ -68,18 +68,19 @@ public class MainActivity extends AppCompatActivity {
 
             int count = 0;
             for (int i = 0; i < 8; i++) {
+                count++;
                 TableRow row = new TableRow(this);
                 tableLayoutChess.addView(row);
                 row.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.MATCH_PARENT, 1.0f));
                 for (int j = 0; j < 8; j++) {
                     TableRow col = new TableRow(this);
                     if ((count % 2) == 0) {
-                        col.setBackgroundColor(Color.WHITE);
+                        col.setBackgroundColor(Color.parseColor("#47597F"));
                     } else {
-                        col.setBackgroundColor(Color.BLACK);
+                        col.setBackgroundColor(Color.parseColor("#4C6284"));
                     }
                     TextView str2 = new TextView(this);
-                    str2.setTextColor(Color.BLUE);
+                    str2.setTextColor(Color.WHITE);
                     str2.setText(i + ", " + j);
                     col.addView(str2);
                     row.addView(col);

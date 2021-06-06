@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
             tableLayoutChess = (TableLayout) findViewById(R.id.table_chess);
             tableLayoutChess.setPadding(80, 200, 80, 200);
 
-            King king = new King();
-            Knight knight = new Knight();
 
             //Init entire table
             int count = 0;
@@ -105,8 +103,12 @@ public class MainActivity extends AppCompatActivity {
             //Define 2d array
             System.out.println(getClass());
             Piece[][] sideA = new Piece[2][8];
+            King king = new King();
+            Knight knightA = new Knight();
+            Knight knightB = new Knight();
+            sideA[0][1] = knightA;
             sideA[0][4] = king;
-
+            sideA[0][6] = knightB;
 
             //
             ImageView imageView = new ImageView(this);
@@ -116,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
             //Init black pieces
             for (int i = 0; i < 2; i++) {
                 for (int j = 0; j < 8; j++) {
-                    System.out.println(j + ", " + i);
                     if(sideA[i][j]!=null){
+                        sideA[i][j].getImageView(this);
                         System.out.println(j + ", " + i);
                         System.out.println(sideA[i][j]);
                         System.out.println("not null");

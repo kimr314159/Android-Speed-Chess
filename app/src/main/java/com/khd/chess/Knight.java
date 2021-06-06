@@ -1,5 +1,8 @@
 package com.khd.chess;
 
+import android.content.Context;
+import android.widget.ImageView;
+
 public class Knight implements Piece {
     @Override
     public void move() {
@@ -24,6 +27,13 @@ public class Knight implements Piece {
     @Override
     public void getAllowedMoves() {
 
+    }
+
+    @Override
+    public ImageView getImageView(Context context) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.knight);
+        return imageView;
     }
 
 }

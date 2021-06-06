@@ -1,6 +1,8 @@
 package com.khd.chess;
 
+import android.content.Context;
 import android.graphics.Point;
+import android.widget.ImageView;
 
 import java.nio.file.Path;
 
@@ -34,6 +36,13 @@ public class King implements Piece {
     @Override
     public void getAllowedMoves() {
 
+    }
+
+    @Override
+    public ImageView getImageView(Context context) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.king);
+        return imageView;
     }
 
     public Point[] getStartingPositions(){

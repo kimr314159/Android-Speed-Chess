@@ -5,10 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import com.khd.chess.Piece;
+
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -74,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
                 tableLayoutChess.addView(row);
                 row.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.MATCH_PARENT, 1.0f));
                 for (int j = 0; j < 8; j++) {
+
+
                     TableRow col = new TableRow(this);
                     if ((count % 2) == 0) {
                         col.setBackgroundColor(Color.parseColor("#47597F"));
@@ -85,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     str2.setText(j + ", " + i);
                     col.addView(str2);
                     row.addView(col);
+
                     col.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1.0f));
                     count++;
                     System.out.println("Testing.");
@@ -92,10 +100,28 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
+
+
+            //Define 2d array
+            System.out.println(getClass());
+            Piece[][] sideA = new Piece[2][8];
+            sideA[0][4] = king;
+
+
+            //
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(R.drawable.king);
+            //
+
             //Init black pieces
             for (int i = 0; i < 2; i++) {
                 for (int j = 0; j < 8; j++) {
                     System.out.println(j + ", " + i);
+                    if(sideA[i][j]!=null){
+                        System.out.println(j + ", " + i);
+                        System.out.println(sideA[i][j]);
+                        System.out.println("not null");
+                    }
                 }
             }
         }catch(Exception e){

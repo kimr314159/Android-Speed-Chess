@@ -8,6 +8,9 @@ public class King implements Piece {
 
     private Point[] startingPositions = {new Point(4,0),new Point(4,7) };
 
+
+
+
     @Override
     public void move() {
 

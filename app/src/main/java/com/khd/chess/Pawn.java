@@ -1,7 +1,6 @@
 package com.khd.chess;
 
 import android.content.Context;
-import android.graphics.Point;
 import android.widget.ImageView;
 
 public class Pawn implements Piece {

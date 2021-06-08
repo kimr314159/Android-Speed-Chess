@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             sideA[0][6] = knightB;
 
 
+
             //Init entire table
             int count = 0;
             for (int i = 0; i < 8; i++) {

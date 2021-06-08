@@ -70,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
 
             //Define 2d array
             System.out.println(getClass());
-            Piece[][] sideA = new Piece[2][8];
-            King king = new King();
-            Knight knightA = new Knight();
-            Knight knightB = new Knight();
-            sideA[0][1] = knightA;
-            sideA[0][4] = king;
-            sideA[0][6] = knightB;
+            Piece[][] sideA = {
+                    { new Knight(), new Knight(),new Knight(),new Knight(),new King(),new Knight(),new Knight(),new Knight()},
+                    { new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn() }
+            };
+
+
+
 
 
 

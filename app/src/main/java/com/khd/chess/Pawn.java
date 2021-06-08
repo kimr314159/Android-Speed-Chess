@@ -32,6 +32,8 @@ public class Pawn implements Piece {
 
     @Override
     public ImageView getImageView(Context context) {
-        return null;
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.pawn);
+        return imageView;
     }
 }

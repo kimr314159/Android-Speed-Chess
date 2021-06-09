@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             //Define 2d array
             System.out.println(getClass());
             Piece[][] sideA = {
-                    { new Knight(), new Knight(),new Knight(),new Knight(),new King(),new Knight(),new Knight(),new Knight()},
+                    { new Knight(), new Knight(),new Knight(),new Queen(),new King(),new Knight(),new Knight(),new Knight()},
                     { new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn() }
             };
 

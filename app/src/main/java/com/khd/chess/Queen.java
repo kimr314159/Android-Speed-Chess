@@ -36,6 +36,7 @@ public class Queen implements Piece {
     @Override
     public ImageView getImageView(Context context) {
         ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.queen);
         return imageView;
     }
 

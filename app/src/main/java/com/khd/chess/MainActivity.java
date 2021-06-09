@@ -77,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
             //Init entire table
             int count = 0;
             for (int i = 0; i < 8; i++) {
@@ -116,16 +113,9 @@ public class MainActivity extends AppCompatActivity {
 
                     col.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1.0f));
                     count++;
-
-
                     System.out.println("Testing.");
                 }
             }
-
-
-
-
-
 
 
             //Init black pieces

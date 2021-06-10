@@ -5,15 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import com.khd.chess.Piece;
-
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -21,16 +18,45 @@ public class MainActivity extends AppCompatActivity {
 
     TableLayout tableLayoutChess;
     TextView textViewTimer;
+    CountDownTimer countDownTimer;
+    Button buttonTimer;
+    boolean isTimerOn;
+    public static final String START_TIMER = "Start Timer.";
+    public static final String PAUSE_TIMER = "Pause Timer.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        buttonTimer = (Button) findViewById(R.id.button_timer);
+        buttonTimer.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               String buttonText = buttonTimer.getText().toString();
+               switch(buttonText){
+               case START_TIMER:
+                   buttonTimer.setText(PAUSE_TIMER);
+               case PAUSE_TIMER:
+                   buttonTimer.setText(START_TIMER);
+               }
+           }
+       });
 
         initTable();
         initTimer();
+        resetTimer();
+
+
     }
-    
+
+    public void resetTimer() {
+        System.out.println("ok");
+        countDownTimer.start();
+    }
+
+
+
+
     /**
     * Change view to include timer
     *
@@ -38,13 +64,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean initTimer(){
         try{
             textViewTimer = (TextView) findViewById(R.id.text_view_timer);
-            CountDownTimer countDownTimer = new CountDownTimer(5000, 100) {
+
+            countDownTimer = new CountDownTimer(5000, 100) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     String secondsLeft = String.valueOf((int)millisUntilFinished/1000);
                     textViewTimer.setText(secondsLeft);
                 }
-
                 @Override
                 public void onFinish() {
                     textViewTimer.setText("Time Completed.");
@@ -54,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
             System.err.println("Failed to initialize timer. " + e);
             return false;
         }
-
         return true;
     }
 

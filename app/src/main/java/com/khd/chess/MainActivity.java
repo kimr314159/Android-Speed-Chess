@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
     TableLayout tableLayoutChess;
     TextView textViewTimer;
     CountDownTimer countDownTimer;
@@ -45,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         initTable();
         initTimer();
         resetTimer();
-
-
     }
 
     public void resetTimer() {
@@ -96,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             //Define 2d array
             System.out.println(getClass());
             Piece[][] sideA = {
-                    { new Knight(), new Knight(),new Knight(),new Queen(),new King(),new Knight(),new Knight(),new Knight()},
+                    { new Rook(), new Knight(),new Knight(),new Queen(),new King(),new Knight(),new Knight(),new Rook()},
                     { new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn() }
             };
 

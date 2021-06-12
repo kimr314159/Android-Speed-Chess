@@ -27,18 +27,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonTimer = (Button) findViewById(R.id.button_timer);
-        buttonTimer.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String buttonText = buttonTimer.getText().toString();
-               switch(buttonText){
-               case START_TIMER:
-                   buttonTimer.setText(PAUSE_TIMER);
-               case PAUSE_TIMER:
-                   buttonTimer.setText(START_TIMER);
-               }
-           }
-       });
+
+        buttonTimer.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        String text = (buttonTimer.getText() == START_TIMER ? PAUSE_TIMER : START_TIMER);
+                        buttonTimer.setText(text);
+                    }
+                });
+
+
+
+        
 
         initTable();
         initTimer();

@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
-
-        
-
         initTable();
         initTimer();
         resetTimer();

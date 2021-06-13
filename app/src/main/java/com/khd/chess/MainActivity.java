@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonTimer = (Button) findViewById(R.id.button_timer);
-         mediaPlayer = MediaPlayer.create(this, R.raw.soundPress);
+
 
         buttonTimer.setOnClickListener(
                 new Button.OnClickListener() {
@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
                         buttonTimer.setText(text);
                     }
                 });
-
-
         initTable();
         initTimer();
         resetTimer();
@@ -88,6 +86,17 @@ public class MainActivity extends AppCompatActivity {
         try {
             tableLayoutChess = (TableLayout) findViewById(R.id.table_chess);
             tableLayoutChess.setPadding(80, 200, 80, 200);
+
+            mediaPlayer = MediaPlayer.create(this, R.raw.press);
+            tableLayoutChess.setSoundEffectsEnabled(false);
+            tableLayoutChess.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mediaPlayer.start();
+                    System.out.println("begin sound.");
+                }}
+             );
+
 
             //Define 2d array
             System.out.println(getClass());

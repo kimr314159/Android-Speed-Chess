@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonTimer = (Button) findViewById(R.id.button_timer);
-         mediaPlayer = MediaPlayer.create(this, R.raw.press);
+         mediaPlayer = MediaPlayer.create(this, R.raw.soundPress);
 
         buttonTimer.setOnClickListener(
                 new Button.OnClickListener() {

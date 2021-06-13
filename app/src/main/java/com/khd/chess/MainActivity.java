@@ -3,6 +3,7 @@ package com.khd.chess;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     CountDownTimer countDownTimer;
     Button buttonTimer;
     boolean isTimerOn;
+    MediaPlayer mediaPlayer;
     public static final String START_TIMER = "Start Timer.";
     public static final String PAUSE_TIMER = "Pause Timer.";
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonTimer = (Button) findViewById(R.id.button_timer);
+         mediaPlayer = MediaPlayer.create(this, R.drawable.press);
 
         buttonTimer.setOnClickListener(
                 new Button.OnClickListener() {

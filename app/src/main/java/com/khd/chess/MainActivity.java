@@ -98,14 +98,13 @@ public class MainActivity extends AppCompatActivity {
              );
 
 
+
             //Define 2d array
             System.out.println(getClass());
             Piece[][] sideA = {
                     { new Rook(), new Knight(),new Bishop(),new Queen(),new King(),new Bishop(),new Knight(),new Rook()},
                     { new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn() }
             };
-
-
 
             //Init entire table
             int count = 0;
@@ -134,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                         imageView.getLayoutParams().width = 100;
                         imageView.requestLayout();
 
-                        System.out.println(j + ", " + i);
+
                         System.out.println(sideA[i][j]);
                         System.out.println("not null");
                     }else{
@@ -143,6 +142,17 @@ public class MainActivity extends AppCompatActivity {
 
                     col.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT, 1.0f));
                     count++;
+
+
+                    int currRow = i;
+                    int currCol = j;
+                    col.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            System.out.println(currRow + ", " + currCol);
+                        }}
+                    );
+
                     System.out.println("Testing.");
                 }
             }

@@ -105,6 +105,14 @@ public class MainActivity extends AppCompatActivity {
                     { new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn() }
             };
 
+
+            //Define second 2D array
+            Piece[][] sideB = {
+                    {new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn(),new Pawn()},
+                    {new Rook(), new Knight(),new Bishop(),new Queen(),new King(),new Bishop(),new Knight(),new Rook()}
+            };
+
+
             //Init entire table
             int count = 0;
             for (int i = 0; i < 8; i++) {
@@ -135,17 +143,12 @@ public class MainActivity extends AppCompatActivity {
 
                         System.out.println(sideA[i][j]);
                         System.out.println("not null");
-                    } else if(i==7 && j==4){//test
-
-                        King king = new King();
-                        ImageView imageView = king.getImageViewB(this);
-
+                    } else if(i>5&&sideB[i][j]!=null){
+                        ImageView imageView = sideB[i][j].getImageView(this);
                         col.addView(imageView);
                         imageView.getLayoutParams().height = 100;
                         imageView.getLayoutParams().width = 100;
                         imageView.requestLayout();
-
-
                     }else{
                         col.addView(str2);
                     }

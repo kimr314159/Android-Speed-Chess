@@ -1,7 +1,6 @@
 package com.khd.chess;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -136,6 +135,17 @@ public class MainActivity extends AppCompatActivity {
 
                         System.out.println(sideA[i][j]);
                         System.out.println("not null");
+                    } else if(i==7 && j==4){//test
+
+                        King king = new King();
+                        ImageView imageView = king.getImageViewB(this);
+
+                        col.addView(imageView);
+                        imageView.getLayoutParams().height = 100;
+                        imageView.getLayoutParams().width = 100;
+                        imageView.requestLayout();
+
+
                     }else{
                         col.addView(str2);
                     }

@@ -45,6 +45,13 @@ public class King implements Piece {
         return imageView;
     }
 
+
+    public ImageView getImageViewB(Context context) {
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.kingb);
+        return imageView;
+    }
+
     public Point[] getStartingPositions(){
         return startingPositions;
     }
